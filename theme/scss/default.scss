@@ -2,7 +2,7 @@
 @import "compass/css3/columns";
 @import "compass/css3/user-interface";
 
-$social-tags: '#yourhashtag';
+$social-tags: '#CleanCode';
 $brand-small-icon-size: 30px;
 
 $gray-1: #e6e6e6;
@@ -548,12 +548,12 @@ q {
   line-height: 72px;
 
   &:before {
-    content: '“';
+    content: '"';
     position: absolute;
     margin-left: -0.5em;
   }
   &:after {
-    content: '”';
+    content: '"';
     position: absolute;
     margin-left: 0.1em;
   }
