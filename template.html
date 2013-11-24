@@ -284,8 +284,10 @@ Product outgoingProduct;
       <h2>Use Pronounceable Names</h2>
     </hgroup>
     <article class="build smaller">
-      <p>Developers should discuss about code.</p>
-      <pre class="prettyprint" data-lang="java">
+      <ul class="build">
+        <li>Developers should discuss about code.</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 class DtaRcrd102 {
   private Date <b>genymdhms</b>;
   private Date modymdhms;
@@ -293,10 +295,12 @@ class DtaRcrd102 {
   /* ... */
 };
 </pre>
-      <p>generation date, year, month, day, hour, minute, and second</p>
-      <p>can be funny ;)</p>
-      <p>New developers have to have the variables explained </p>
-      <pre class="prettyprint" data-lang="java">
+        </li>
+        <li>generation date, year, month, day, hour, minute, and second</li>
+        <li>can be funny ;)</li>
+        <li>New developers have to have the variables explained</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 class Customer {
   private Date generationTimestamp; 
   private Date modificationTimestamp; 
@@ -304,6 +308,8 @@ class Customer {
   /* ... */
 };
 </pre>
+        </li>
+      </ul>
     </article>
   </slide>
 
@@ -312,15 +318,21 @@ class Customer {
       <h2>Use Searchable Names</h2>
     </hgroup>
     <article class="smaller">
-      <p>longer names trump shorter names as long as they contribute to the context*</p>
-      <p>~ The length of a name should correspond to the size of its scope</p>
-      <p>any searchable name trumps a constant in code</p>
-      <pre class="prettyprint" data-lang="java">
+      <ul class="build">
+        <li>for search longer names trump shorter names </li>
+        <li>as long as they contribute to the context</li>
+        <li>=&gt; The length of a name should correspond to the size of its scope</li>
+        <li>any searchable name trumps a constant in code</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 int s;
 for (int j=0; j&lt;34; j++) { 
   s += (t[j]*4)/5;
 }</pre>
-      <pre class="prettyprint" data-lang="java">final int realDaysPerIdealDay = 4;
+        </li>
+        <li>better:</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">final int realDaysPerIdealDay = 4;
 final int WORK_DAYS_PER_WEEK = 5;
 int sum = 0;
 for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
@@ -328,6 +340,8 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
   int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
   sum += realTaskWeeks;
 }</pre>
+        </li>
+      </ul>
     </article>
   </slide>
 
