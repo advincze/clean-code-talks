@@ -96,24 +96,19 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>
-    <article class="smaller build">
-    <ul class="build">
-      <li>takes time </li>
-      <li>but saves more than it takes.</li>
-    </ul>
+    <article class="build">
+    <p>Takes a lot of time</p>
+    <p>... but saves more than it takes.</p>
       <pre class="prettyprint" data-lang="java">
 int d; // elapsed time in days
 </pre>
-    <ul class="build">
-      <li>The name d reveals nothing.</li>
-    </ul>
+    <p>The name d reveals nothing.</p>
+    <p>Better:</p>
     <pre class="prettyprint" data-lang="java">
 int elapsedTimeInDays; 
 int daysSinceCreation; 
 int daysSinceModification; 
-int fileAgeInDays;
-</pre>
-
+int fileAgeInDays;</pre>
     </article>
   </slide>
 
@@ -122,9 +117,7 @@ int fileAgeInDays;
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>  
     <article class="smaller">
-      What is the purpose of this code?
-      <br/>
-      <br/>
+      <p>What is the purpose of this code?</p>
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getThem() {
   List<int[]> list1 = new ArrayList<int[]>(); 
@@ -149,17 +142,18 @@ public List<int[]> getThem() {
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>  
-    <article class="smaller build">
+    <article class="smaller">
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getThem() {
   List<int[]> list1 = new ArrayList<int[]>(); 
   for (int[] x : theList) {
-    if (x[0] == 4) { list1.add(x);}
+    if (x[0] == 4) { list1.add(x); }
   }
   return list1; 
 }
 </pre>
-      <pre class="prettyprint" data-lang="java">
+      <div class="build">
+        <pre class="prettyprint" data-lang="java">
 public List<int[]> getFlaggedCells() {
   List<int[]> flaggedCells = new ArrayList<int[]>(); 
   for (int[] cell : gameBoard) {
@@ -168,7 +162,7 @@ public List<int[]> getFlaggedCells() {
   return flaggedCells; 
 }  
 </pre>
-      <pre class="prettyprint" data-lang="java">
+        <pre class="prettyprint" data-lang="java">
 public List<Cell> getFlaggedCells() {
   List<Cell> flaggedCells = new ArrayList<Cell>(); 
   for (Cell cell : gameBoard) {
@@ -177,36 +171,47 @@ public List<Cell> getFlaggedCells() {
   return flaggedCells; 
 }
 </pre>
+      </div>
     </article>
   </slide>
 
-    <slide>
+  <slide>
     <hgroup>
       <h2>Avoid Disinformation</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Programmers must avoid leaving false clues </li>
-        <li>
-          <pre class="prettyprint" data-lang="java">
-int hp; // hypotenuse
-</pre>
-        </li>
-        <li>
-          <pre class="prettyprint" data-lang="java">
-Collection&lt;Account&gt; accountList;
-</pre>
-        </li>
-        <li> better: </li>
-        <li>
-          <li>
-          <pre class="prettyprint" data-lang="java">
+      <p>Programmers must avoid leaving false clues</p>
+      <pre class="prettyprint" data-lang="java">
+int hp; // hypotenuse</pre>
+      <p>"hp" could mean different things</p>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Avoid Disinformation</h2>
+    </hgroup>
+    <article>
+      <p>Types should not be coded into the name</p>
+      <pre class="prettyprint" data-lang="java">
+Collection&lt;Account&gt; accountList;</pre>
+      <p>better:</p>
+      <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountGroup;
 Collection&lt;Account&gt; bunchOfAccounts;
-Collection&lt;Account&gt; accounts;
-</pre>
-        </li>
-      </ul>
+Collection&lt;Account&gt; accounts;</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Avoid Disinformation</h2>
+    </hgroup>
+    <article>
+      <p> names which vary in small ways.</p>
+      <p> XYZControllerForEfficientHandlingOfStrings </p>
+      <p> vs XYZControllerForEfficientStorageOfStrings </p>
+      <p> ... vs XYZControllerForStringStoringEfficiently ?</p>
     </article>
   </slide>
 
@@ -217,8 +222,141 @@ Collection&lt;Account&gt; accounts;
     <article>
       <ul>
         <li>Spelling is information</li>
+        <li>Inconsistent spellings is disinformation.</li>
         <li>Be aware of automatic code completion</li>
+        <li>the developer is likely to pick an object by name without seeing your copious comments  or even the list of methods supplied by that class</li>
+        <li>names for very similar things sort together alphabetically</li>
       </ul>
+      <pre class="prettyprint" data-lang="java">
+int a = l; 
+if ( O == l ){
+  a=O1;  
+} else {
+  l=01;  
+}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Make Meaningful Distinctions</h2>
+    </hgroup>
+    <article class="smaller">
+    <div class="build">
+      <p>Don't write code solely to satisfy a compiler or interpreter.</p>
+      <p>... by misspelling:</p>
+      <pre class="prettyprint" data-lang="java">
+Class klass;
+Class clazz;</pre>
+    </div>
+    <div class="build">
+      <p>If names must be different, then they should also mean something different.</p>
+      <pre class="prettyprint" data-lang="java">
+public static void copyChars(char[] <b>a1</b>, char[] <b>a2</b>) { 
+  for (int i = 0; i &lt; <b>a1</b>.length; i++) {
+    <b>a2</b>[i] = <b>a1</b>[i]; 
+  }
+}</pre>
+      <pre class="prettyprint" data-lang="java">
+public static void copyChars(char[] source, char[] destination) { 
+  for (int i = 0; i &lt; source.length; i++) {
+    destination[i] = source[i]; 
+  }
+}</pre>
+    </div>
+</article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Avoid Noise Words</h2>
+    </hgroup>
+    <article class="smaller">
+    <p>There is no difference in meaning between:</p>
+    <pre class="prettyprint" data-lang="java">
+class Product { ... }
+class Product<b>Info</b> { ... }
+class Product<b>Data</b> { ... }
+</pre>
+<pre class="prettyprint" data-lang="java">
+Product product;
+Product product<b>2</b>;
+Product <b>a</b>Product;
+Product <b>the</b>Product;
+Product <b>other</b>Product;
+
+
+Money money;
+Money moneyAmount;
+</pre>
+    <p>Better:</p>
+    <pre class="prettyprint" data-lang="java">
+Product incomingProduct;
+Product outgoingProduct;
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use Pronounceable Names</h2>
+    </hgroup>
+    <article class="build smaller">
+      <p>Developers should discuss about code.</p>
+      <pre class="prettyprint" data-lang="java">
+class DtaRcrd102 {
+  private Date <b>genymdhms</b>;
+  private Date modymdhms;
+  private final String pszqint = "102"; 
+  /* ... */
+};
+</pre>
+      <p>generation date, year, month, day, hour, minute, and second</p>
+      <p>can be funny ;)</p>
+      <p>New developers had to have the variables explained </p>
+      <pre class="prettyprint" data-lang="java">
+class Customer {
+  private Date generationTimestamp; 
+  private Date modificationTimestamp; 
+  private final String recordId = "102"; 
+  /* ... */
+};
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use Searchable Names</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>longer names trump shorter names</p>
+      <p>~ The length of a name should correspond to the size of its scope</p>
+      <p>and any searchable name trumps a constant in code</p>
+      <p> MAX_CLASSES_PER_STUDENT vs 7</p>
+      <pre class="prettyprint" data-lang="java">
+int s;
+for (int j=0; j&lt;34; j++) { 
+  s += (t[j]*4)/5;
+}</pre>
+      <pre class="prettyprint" data-lang="java">
+final int realDaysPerIdealDay = 4;
+final int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
+  int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+  int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
+  sum += realTaskWeeks;
+}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
+    <article>
+    
     </article>
   </slide>
 
