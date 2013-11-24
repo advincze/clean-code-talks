@@ -179,7 +179,7 @@ public List<Cell> getFlaggedCells() {
       <h2>Avoid Disinformation</h2>
     </hgroup>
     <article>
-      <p>Programmers must avoid leaving false clues</p>
+      <p>Programmers must avoid leaving false clues that obscure the meaning of code</p>
       <pre class="prettyprint" data-lang="java">
 int hp; // hypotenuse</pre>
       <p>"hp" could mean different things</p>
@@ -191,7 +191,9 @@ int hp; // hypotenuse</pre>
       <h2>Avoid Disinformation</h2>
     </hgroup>
     <article>
-      <p>Types should not be coded into the name (see Hungarian notation)</p>
+
+      <p>Types should not be coded into the name (s. Hungarian notation later)</p>
+
       <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountList;</pre>
       <p>better:</p>
@@ -294,7 +296,7 @@ class Customer {
       <h2>Use Searchable Names</h2>
     </hgroup>
     <article class="smaller">
-      <p>longer names trump shorter names</p>
+      <p>longer names trump shorter names as long as they contribute to the context*</p>
       <p>~ The length of a name should correspond to the size of its scope</p>
       <p>any searchable name trumps a constant in code</p>
       <pre class="prettyprint" data-lang="java">
@@ -302,8 +304,7 @@ int s;
 for (int j=0; j&lt;34; j++) { 
   s += (t[j]*4)/5;
 }</pre>
-      <pre class="prettyprint" data-lang="java">
-final int realDaysPerIdealDay = 4;
+      <pre class="prettyprint" data-lang="java">final int realDaysPerIdealDay = 4;
 final int WORK_DAYS_PER_WEEK = 5;
 int sum = 0;
 for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
