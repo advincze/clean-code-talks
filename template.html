@@ -149,18 +149,42 @@ public List<int[]> getThem() {
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>  
-    <article class="smaller">
+    <article class="smaller build">
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getThem() {
   List<int[]> list1 = new ArrayList<int[]>(); 
   for (int[] x : theList) {
-    if (x[0] == 4) {
-      list1.add(x);
-    }
+    if (x[0] == 4) { list1.add(x);}
   }
   return list1; 
 }
 </pre>
+      <pre class="prettyprint" data-lang="java">
+public List<int[]> getFlaggedCells() {
+  List<int[]> flaggedCells = new ArrayList<int[]>(); 
+  for (int[] cell : gameBoard) {
+    if (cell[STATUS_VALUE] == FLAGGED) { flaggedCells.add(cell); }
+  }
+  return flaggedCells; 
+}  
+</pre>
+      <pre class="prettyprint" data-lang="java">
+public List<Cell> getFlaggedCells() {
+  List<Cell> flaggedCells = new ArrayList<Cell>(); 
+  for (Cell cell : gameBoard) {
+    if (cell.isFlagged()) { flaggedCells.add(cell); }
+  }
+  return flaggedCells; 
+}
+</pre>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Use Intention-Revealing Names</h2>
+    </hgroup>  
+    <article class="smaller">
 rename "theList" -> "gameBoard"
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getFlaggedCells() {
@@ -173,9 +197,20 @@ public List<int[]> getFlaggedCells() {
   return flaggedCells; 
 }
 </pre>
+
+<pre class="prettyprint" data-lang="java">
+public List<Cell> getFlaggedCells() {
+  List<Cell> flaggedCells = new ArrayList<Cell>(); 
+  for (Cell cell : gameBoard) {
+    if (cell.isFlagged()) {
+      flaggedCells.add(cell);
+    }
+  }
+  return flaggedCells; 
+}
+</pre>
     </article>
   </slide>
-
 
   <slide>
     <hgroup>
