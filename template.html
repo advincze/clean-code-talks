@@ -96,16 +96,18 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>
-    <article class="build">
-    <p>Takes a lot of time</p>
-    <p>... but saves more than it takes.</p>
-      <pre class="prettyprint" data-lang="java">int d; // elapsed time in days</pre>
-    <p>The name d reveals nothing.</p>
-    <p>Better:</p>
-    <pre class="prettyprint" data-lang="java">int elapsedTimeInDays;
+    <article >
+    <ul class="build">
+      <li>Takes a lot of time</li>
+      <li>... but saves more than it takes.</li>
+      <li><pre class="prettyprint" data-lang="java">int d; // elapsed time in days</pre></li>
+      <li>The name d reveals nothing.</li>
+      <li>better:</li>
+      <li><pre class="prettyprint" data-lang="java">int elapsedTimeInDays;
 int daysSinceCreation; 
 int daysSinceModification; 
-int fileAgeInDays;</pre>
+int fileAgeInDays;</pre></li>
+    </ul>
     </article>
   </slide>
 
@@ -189,7 +191,7 @@ int hp; // hypotenuse</pre>
       <h2>Avoid Disinformation</h2>
     </hgroup>
     <article>
-      <p>Types should not be coded into the name</p>
+      <p>Types should not be coded into the name (see Hungarian notation)</p>
       <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountList;</pre>
       <p>better:</p>
