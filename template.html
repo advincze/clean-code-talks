@@ -99,13 +99,10 @@ URL: https://code.google.com/p/io-2012-slides
     <article class="build">
     <p>Takes a lot of time</p>
     <p>... but saves more than it takes.</p>
-      <pre class="prettyprint" data-lang="java">
-int d; // elapsed time in days
-</pre>
+      <pre class="prettyprint" data-lang="java">int d; // elapsed time in days</pre>
     <p>The name d reveals nothing.</p>
     <p>Better:</p>
-    <pre class="prettyprint" data-lang="java">
-int elapsedTimeInDays; 
+    <pre class="prettyprint" data-lang="java">int elapsedTimeInDays;
 int daysSinceCreation; 
 int daysSinceModification; 
 int fileAgeInDays;</pre>
@@ -209,9 +206,9 @@ Collection&lt;Account&gt; accounts;</pre>
     </hgroup>
     <article>
       <p> names which vary in small ways.</p>
-      <p> XYZControllerForEfficientHandlingOfStrings </p>
-      <p> vs XYZControllerForEfficientStorageOfStrings </p>
-      <p> ... vs XYZControllerForStringStoringEfficiently ?</p>
+      <pre class="prettyprint" data-lang="java">class XYZControllerForEfficientHandlingOfStrings{ ... }
+ class XYZControllerForEfficientHandlingOfStrings{ ... }
+   class XYZControllerForStringStoringEfficiently{ ... }</pre>
     </article>
   </slide>
 
