@@ -175,33 +175,31 @@ public List<Cell> getFlaggedCells() {
     </article>
   </slide>
 
-    <slide>
+  <slide>
     <hgroup>
       <h2>Avoid Disinformation</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Programmers must avoid leaving false clues </li>
-        <li>
-          <pre class="prettyprint" data-lang="java">
-int hp; // hypotenuse
-</pre>
-        </li>
-        <li>
-          <pre class="prettyprint" data-lang="java">
-Collection&lt;Account&gt; accountList;
-</pre>
-        </li>
-        <li> better: </li>
-        <li>
-          <li>
-          <pre class="prettyprint" data-lang="java">
+      <p>Programmers must avoid leaving false clues</p>
+      <pre class="prettyprint" data-lang="java">
+int hp; // hypotenuse</pre>
+      <p>"hp" could mean different things</p>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Avoid Disinformation</h2>
+    </hgroup>
+    <article>
+      <p>Types should not be coded into the name</p>
+      <pre class="prettyprint" data-lang="java">
+Collection&lt;Account&gt; accountList;</pre>
+      <p>better:</p>
+      <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountGroup;
 Collection&lt;Account&gt; bunchOfAccounts;
-Collection&lt;Account&gt; accounts;
-</pre>
-        </li>
-      </ul>
+Collection&lt;Account&gt; accounts;</pre>
     </article>
   </slide>
 
