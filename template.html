@@ -178,11 +178,16 @@ public List<Cell> getFlaggedCells() {
     <hgroup>
       <h2>Avoid Disinformation</h2>
     </hgroup>
-    <article>
-      <p>Programmers must avoid leaving false clues that obscure the meaning of code</p>
-      <pre class="prettyprint" data-lang="java">
+    <article >
+      <ul class="build">
+        <li>"Programmers must avoid leaving false clues that obscure the meaning of code"</li>
+        <li>short or ambigous names can mislead other developers.</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 int hp; // hypotenuse</pre>
-      <p>"hp" could mean different things</p>
+        </li>
+        <li>"hp" could mean different things</li>
+      </ul>
     </article>
   </slide>
   
@@ -190,7 +195,7 @@ int hp; // hypotenuse</pre>
     <hgroup>
       <h2>Avoid Disinformation</h2>
     </hgroup>
-    <article>
+    <article class="build">
 
       <p>Types should not be coded into the name (s. Hungarian notation later)</p>
 
