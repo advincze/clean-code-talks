@@ -222,6 +222,192 @@ Collection&lt;Account&gt; accounts;
     </article>
   </slide>
 
+<slide>
+    <hgroup>
+      <h2>Don't be cute</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Choose clarity over entertainment value</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+public void whack() { // ...}
+</pre>
+        </li>
+        <li> better: </li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+public void kill() { // ...}
+</pre>
+        </li>
+        <li>Say what you mean. Mean what you say.</li>
+      </ul>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Pick One Word per Concept</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Pick one word for one abstract concept</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+// equivalent methods on different classes            
+public Foo fetch() { //...}
+public Foo retrieve() { //...}
+public Foo get() { //...}
+</pre>
+        </li>
+        <li>Function names have to be consistent without any additional exploration</li>
+
+      </ul>
+      <ul class="build">
+        <li>Don't mix concepts like <b>controllers</b>, <b>managers</b> or 
+            <b>drivers</b> in the same codebase
+        </li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+// why are both not controllers or not managers?
+public class DeviceManager() { //...}
+public class ProtocolManager() { //...}
+</pre>
+        </li>
+        <li>Consider framework concepts, e.g.: Controllers in SpringMVC</li>
+      </ul>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Don't Pun</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Avoid using the same word for two purposes</li>
+        <li>e.g. adding elements to other objects</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+// adding elements to an existing collection            
+public boolean add(E element) {}
+
+// appending a String to StringBuffer
+public StringBuffer append(String str) {}
+</pre>
+        </li>
+        <li>Calling both methods <b>add</b> here would be a pun</li>
+        <li>Don't blindly follow the "one word per concept" rule</li>
+        <li>make your code as easy as possible to understand</li>
+      </ul>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Use Solution Domain Names</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>programmers will be reading your code</li>
+        <li>so use computer science terms, algorithm names, pattern names etc.</li>
+        <li>e.g. every developer knows the <a href="http://sourcemaking.com/design_patterns/visitor">VISITOR</a> pattern</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+public class AccountVisitor() {}
+</pre>
+        </li>
+        <li>or knows what a <b>JobQueue</b> is</li>
+        <li>choose technical names where appropriate</li>
+      </ul>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Use Problem Domain Names</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>use names drawn from the problem domain to relate to concepts from this domain</li>
+        <li>e.g.: article, section, teaser, etc.</li>
+        <li>separating solution and problem domain concepts is our job</li>
+        <li>strive for an <a href="http://martinfowler.com/bliki/UbiquitousLanguage.html">ubiquitous language</a> (Eric Evans) -  a common, <a href="http://dict.leo.org/#/search=rigorous&searchLoc=0&resultOrder=basic&multiwordShowSingle=on">rigorous</a> language between developers and users. 
+          <br><br>
+          <img src="images/domain-driven-design.jpg" style="width:20%;">
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Add Meaningful context</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>few names are meaningful without context</li>
+        <li>context for the reader has to be provided in form of classes, functions or namespaces</li>
+        <li>e.g.: variables <b>firstName</b>, <b>lastName</b>, <b>street</b>, <b>city</b>, <b>state</b> and <b>zipcode</b></li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+public void anyMethod() {
+  // using state here doesn't reveal context
+  state
+}
+</pre>
+<li>add context using prefixes <b>addrFirstName</b>, <b>addrLastName</b>, <b>addrState</b></li>
+<li>even better:
+  <pre class="prettyprint" data-lang="java">
+public class Address() {
+  private String state;
+}
+</pre>
+</li>
+      </ul>
+    </article>
+  </slide>
+
+ <slide>
+    <hgroup>
+      <h2>Don't Add <a href="http://dict.leo.org/#/search=Gratuitous&searchLoc=0&resultOrder=basic&multiwordShowSingle=on">Gratuitous</a> Context</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>short names are generally better than longer ones</li>
+        <li>add no more context to a name than necessary</li>
+      </ul>
+      <ul class="build">
+        <li>Example 1: don't prefix every class with an ID of your application</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
+public class ECEArticle() {}
+</pre>
+        </li>
+        <li>Example 2: <b>accountAddress</b> and <b>customerAddress</b> are fine instance but poor class names</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Questions?</h2>
+    </hgroup>
+  </slide>
+
+    <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p></p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
   <slide>
     <hgroup>
       <h2>Slide with Bullets</h2>
