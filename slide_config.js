@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'clean code<br>first round',
+    title: 'clean code<br>part 1',
     subtitle: 'meaningful names',
     //eventTitle: 'Google I/O 2013',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
@@ -26,7 +26,7 @@ var SLIDE_CONFIG = {
   , {
     name: 'Moritz Zimmer',
     company: 'dev, asideas',
-    twitter: '@yourhandle',
+    twitter: '@Moritz_Zimmer',
     github: 'http://github.com/moritzzimmer'
   }]
 };
