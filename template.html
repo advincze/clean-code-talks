@@ -96,24 +96,19 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>
-    <article class="smaller build">
-    <ul class="build">
-      <li>takes time </li>
-      <li>but saves more than it takes.</li>
-    </ul>
+    <article class="build">
+    <p>Takes a lot of time</p>
+    <p>... but saves more than it takes.</p>
       <pre class="prettyprint" data-lang="java">
 int d; // elapsed time in days
 </pre>
-    <ul class="build">
-      <li>The name d reveals nothing.</li>
-    </ul>
+    <p>The name d reveals nothing.</p>
+    <p>Better:</p>
     <pre class="prettyprint" data-lang="java">
 int elapsedTimeInDays; 
 int daysSinceCreation; 
 int daysSinceModification; 
-int fileAgeInDays;
-</pre>
-
+int fileAgeInDays;</pre>
     </article>
   </slide>
 
@@ -122,9 +117,7 @@ int fileAgeInDays;
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>  
     <article class="smaller">
-      What is the purpose of this code?
-      <br/>
-      <br/>
+      <p>What is the purpose of this code?</p>
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getThem() {
   List<int[]> list1 = new ArrayList<int[]>(); 
@@ -149,17 +142,18 @@ public List<int[]> getThem() {
     <hgroup>
       <h2>Use Intention-Revealing Names</h2>
     </hgroup>  
-    <article class="smaller build">
+    <article class="smaller">
       <pre class="prettyprint" data-lang="java">
 public List<int[]> getThem() {
   List<int[]> list1 = new ArrayList<int[]>(); 
   for (int[] x : theList) {
-    if (x[0] == 4) { list1.add(x);}
+    if (x[0] == 4) { list1.add(x); }
   }
   return list1; 
 }
 </pre>
-      <pre class="prettyprint" data-lang="java">
+      <div class="build">
+        <pre class="prettyprint" data-lang="java">
 public List<int[]> getFlaggedCells() {
   List<int[]> flaggedCells = new ArrayList<int[]>(); 
   for (int[] cell : gameBoard) {
@@ -168,7 +162,7 @@ public List<int[]> getFlaggedCells() {
   return flaggedCells; 
 }  
 </pre>
-      <pre class="prettyprint" data-lang="java">
+        <pre class="prettyprint" data-lang="java">
 public List<Cell> getFlaggedCells() {
   List<Cell> flaggedCells = new ArrayList<Cell>(); 
   for (Cell cell : gameBoard) {
@@ -177,6 +171,7 @@ public List<Cell> getFlaggedCells() {
   return flaggedCells; 
 }
 </pre>
+      </div>
     </article>
   </slide>
 
@@ -296,7 +291,7 @@ Product <b>other</b>Product;
 Money money;
 Money moneyAmount;
 </pre>
-    <p>Better:  </p>
+    <p>Better:</p>
     <pre class="prettyprint" data-lang="java">
 Product incomingProduct;
 Product outgoingProduct;
