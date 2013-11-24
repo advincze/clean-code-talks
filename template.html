@@ -276,6 +276,26 @@ public static void copyChars(char[] source, char[] destination) {
 
   <slide>
     <hgroup>
+      <h2>Avoid Noise Words</h2>
+    </hgroup>
+    <article class="smaller">
+    <p>There is no difference in meaning between:</p>
+    <pre class="prettyprint" data-lang="java">
+class Product { ... }
+class Product<b>Info</b> { ... }
+class Product<b>Data</b> { ... }
+</pre>
+<pre class="prettyprint" data-lang="java">
+Product product;
+Product aProduct;
+Product theProduct;
+</pre>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
       <h2>Slide with Bullets</h2>
     </hgroup>
     <article>
