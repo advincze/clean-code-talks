@@ -477,7 +477,7 @@ public Foo retrieve() { //...}
 public Foo get() { //...}
 </pre>
         </li>
-        <li>Function names have to be consistent without any additional exploration (like reading JavaDoc)</li>
+        <li>Function names have to be consistent without any additional exploration - developers likely pick an object by name without seeing your copious comments</li>
       </ul>
       <ul class="build">
         <li>Don't mix words like <b>controllers</b>, <b>managers</b> or 
@@ -546,11 +546,15 @@ public class AccountVisitor() {}
     <article>
       <ul class="build">
         <li>use names drawn from the problem domain to relate to concepts from this domain</li>
-        <li>e.g.: article, section, teaser, etc.</li>
+        <li><pre class="prettyprint" data-lang="java">
+public class Section() {
+  public void placeFrontPageArticle(Article article) { }
+}
+</pre></li>
         <!--<li>separating solution and problem domain concepts is our job</li>-->
         <li>strive for an <a href="http://martinfowler.com/bliki/UbiquitousLanguage.html">ubiquitous language</a> (Eric Evans) -  a common, <a href="http://dict.leo.org/#/search=rigorous&searchLoc=0&resultOrder=basic&multiwordShowSingle=on">rigorous</a> language between developers and users. 
           <br><br>
-          <img src="images/domain-driven-design.jpg" style="width:20%;">
+          <img src="images/domain-driven-design.jpg" style="width:18%;">
         </li>
       </ul>
     </article>
