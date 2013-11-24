@@ -248,25 +248,33 @@ if ( O == l ){
     <hgroup>
       <h2>Make Meaningful Distinctions</h2>
     </hgroup>
-    <article class="build">
-      <ul>
-        <li>Spelling is information</li>
-        <li>Inconsistent spellings is disinformation.</li>
-      </ul>
-      <p>It's 2013: Assume that you are working with an IDE!</p>
-      <ul>
-        <li>Be aware of automatic code completion</li>
-        <li>the developer is likely to pick an object by name without seeing your copious comments  or even the list of methods supplied by that class</li>
-        <li>names for very similar things sort together alphabetically</li>
-      </ul>
+    <article class="smaller">
+    <div class="build">
+      <p>Don't write code solely to satisfy a compiler or interpreter.</p>
+      <p>... by misspelling:</p>
       <pre class="prettyprint" data-lang="java">
-int a = l; 
-if ( O == l ){
-  a=O1;  
-} else {
-  l=01;  
-}</pre>
-    </article>
+Class klass;
+Class clazz;</pre>
+    </div>
+      <div class="build">
+        <p>If names must be different, then they should also mean something different.</p>
+        <pre class="prettyprint" data-lang="java">
+public static void copyChars(char a1[], char a2[]) { 
+  for (int i = 0; i < a1.length; i++) {
+    a2[i] = a1[i]; 
+  }
+}
+</pre>
+<pre class="prettyprint" data-lang="java">
+public static void copyChars(char source[], char destination[]) { 
+  for (int i = 0; i < source.length; i++) {
+    destination[i] = source[i]; 
+  }
+}
+      </div>
+
+</pre>
+</article>
   </slide>
 
   <slide>
