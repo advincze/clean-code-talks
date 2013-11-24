@@ -266,10 +266,9 @@ public static void copyChars(char[] source, char[] destination) {
 
   <slide>
     <hgroup>
-      <h2>Make Meaningful Distinctions</h2>
+      <h2>Avoid Noise Words</h2>
     </hgroup>
     <article class="smaller">
-    <p>Avoid Noise Words</p>
     <p>There is no difference in meaning/p>
     <pre class="prettyprint" data-lang="java">
 class Product { ... }
@@ -349,14 +348,16 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
 
   <slide>
     <hgroup>
-      <h2>Avoid encodings</h2>
+      <h2>Avoid encodings - Hungarian Notation</h2>
     </hgroup>
     <article>
-      <p>Hungarian Notation</p>
       <pre class="prettyprint" data-lang="java">String stTelephoneNumber;
-Date dtBirthday;
-PhoneNumber phoneString; ...</pre>
-      
+Date dtBirthday;</pre>
+      <p>in 2013: rich type systems, compilers remember and enforce the types</p>
+      <p>smaller classes and shorter functions: <br/>=&gt; people can usually see the point of declaration
+      </p>
+      <p>Java programmers don’t need type encoding</p>
+      <pre class="prettyprint" data-lang="java">PhoneNumber phoneString; // this variable was declared a String first</pre>
     </article>
   </slide>
 
