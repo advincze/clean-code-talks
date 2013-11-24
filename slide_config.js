@@ -19,13 +19,13 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Adam Vincze',
-    company: 'dev, asideas',
+    name: 'Adam Vincze (@advincze)',
+    company: 'dev, AS ideas',
     twitter: '@advincze',
     github: 'http://github.com/advincze'}
   , {
-    name: 'Moritz Zimmer',
-    company: 'dev, asideas',
+    name: 'Moritz Zimmer (@Moritz_Zimmer)',
+    company: 'dev, AS ideas',
     twitter: '@Moritz_Zimmer',
     github: 'http://github.com/moritzzimmer'
   }]
