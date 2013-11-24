@@ -373,13 +373,13 @@ Date dtBirthday;</pre>
       <h2>Avoid encodings - Member Prefixes</h2>
     </hgroup>
     <article>
-      <ul>
+      <ul class="build">
         <li>Don't use Member Prefixes</li>
         <li>
           <pre class="prettyprint" data-lang="java">public class Part {
-  private String m_dsc; // The textual description 
+  private String <b>m_dsc</b>; // The textual description 
   void setName(String name) {
-    m_dsc = name; 
+    this.<b>m_dsc</b> = name; 
   }
 }</pre>
         </li>
@@ -390,25 +390,26 @@ Date dtBirthday;</pre>
 
   <slide>
     <hgroup>
-      <h2>Interfaces and Implementations</h2>
+      <h2>Avoid Noise in Interfaces and Implementations</h2>
     </hgroup>
-    <article>
-      <p>IShapeFactory vs ShapeFactory</p>
+    <article class="build">
+      <p>Which one should be used? </p>
+      <p><span class="blue">IShapeFactory</span> or <span class="blue">ShapeFactory</span></p>      
       <p>distraction at best and too much information at worst.</p>
       <p>ShapeFactoryImpl is preferable to encoding the interface:</p>
       <pre class="prettyprint" data-lang="java">
 interface ShapeFactory { ... }
 
 class ShapeFactoryImpl implements ShapeFactory { ... }</pre>
+      <p>In some cases, consider not using an interface at all.</p>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Class Names</h2>
+      <h2>Avoid Noise in Class Names</h2>
     </hgroup>
-    <article>
-      <p></p>
+    <article class="build">
       <p>should have noun or noun phrase names:</p>
       <pre class="prettyprint" data-lang="java">
 class Customer {...}
@@ -422,9 +423,9 @@ class AddressParser {...}</pre>
 
   <slide>
     <hgroup>
-      <h2>Method Names</h2>
+      <h2>Avoid Noise in Method Names</h2>
     </hgroup>
-    <article class="smaller">
+    <article class="build smaller">
       <p>should have verb or verb phrase names:</p>
       <pre class="prettyprint" data-lang="java">
 public void postPayment() { ... }
@@ -440,11 +441,13 @@ if (paycheck.isPosted())...</pre>
 
   <slide>
     <hgroup>
-      <h2>Method Names</h2>
+      <h2>Avoid Noise in Method Names</h2>
     </hgroup>
-    <article class="smaller">
-      <p>When constructors are overloaded, </p>
-      <p>use static factory methods with names that describe the arguments:</p>
+    <article class="build ">
+      <div>
+        <p>When constructors are overloaded, </p>
+        <p>use static factory methods with names that describe the arguments:</p>
+      </div>
       <pre class="prettyprint" data-lang="java">
 Complex fulcrumPoint = Complex.FromRealNumber(23.0);</pre>
       <p>better than:</p>
