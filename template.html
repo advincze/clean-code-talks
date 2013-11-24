@@ -75,7 +75,108 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  
+  <slide>
+    <hgroup>
+      <h2>Meaningful names</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>variables</li>
+        <li>functions</li>
+        <li>classes</li>
+        <li>packages</li>
+        <li>files</li>
+        <li>directories</li>
+        <li>artefacts</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use Intention-Revealing Names</h2>
+    </hgroup>
+    <article class="smaller build">
+    <ul class="build">
+      <li>takes time </li>
+      <li>but saves more than it takes.</li>
+    </ul>
+      <pre class="prettyprint" data-lang="java">
+int d; // elapsed time in days
+</pre>
+    <ul class="build">
+      <li>The name d reveals nothing.</li>
+    </ul>
+    <pre class="prettyprint" data-lang="java">
+int elapsedTimeInDays; 
+int daysSinceCreation; 
+int daysSinceModification; 
+int fileAgeInDays;
+</pre>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use Intention-Revealing Names</h2>
+    </hgroup>  
+    <article class="smaller">
+      What is the purpose of this code?
+      <br/>
+      <br/>
+      <pre class="prettyprint" data-lang="java">
+public List<int[]> getThem() {
+  List<int[]> list1 = new ArrayList<int[]>(); 
+  for (int[] x : theList) {
+    if (x[0] == 4) {
+      list1.add(x);
+    }
+  }
+  return list1; 
+}
+</pre>
+      <ul class="build">
+        <li>What kinds of things are in theList?</li>
+        <li>What is the significance of the zeroth subscript of an item in theList?</li>
+        <li>What is the significance of the value 4?</li>
+        <li>How would I use the list being returned?</li>
+      </ul>
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Use Intention-Revealing Names</h2>
+    </hgroup>  
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="java">
+public List<int[]> getThem() {
+  List<int[]> list1 = new ArrayList<int[]>(); 
+  for (int[] x : theList) {
+    if (x[0] == 4) {
+      list1.add(x);
+    }
+  }
+  return list1; 
+}
+</pre>
+rename "theList" -> "gameBoard"
+      <pre class="prettyprint" data-lang="java">
+public List<int[]> getFlaggedCells() {
+  List<int[]> flaggedCells = new ArrayList<int[]>(); 
+  for (int[] cell : gameBoard) {
+    if (cell[STATUS_VALUE] == FLAGGED) {
+      flaggedCells.add(cell);
+    } 
+  }
+  return flaggedCells; 
+}
+</pre>
+    </article>
+  </slide>
+
+
   <slide>
     <hgroup>
       <h2>Slide with Bullets</h2>
