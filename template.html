@@ -266,22 +266,22 @@ public static void copyChars(char[] source, char[] destination) {
 
   <slide>
     <hgroup>
-      <h2>Avoid Noise Words</h2>
+      <h2>Make Meaningful Distinctions</h2>
     </hgroup>
     <article class="smaller">
-    <p>There is no difference in meaning between:</p>
+    <p>Avoid Noise Words</p>
+    <p>There is no difference in meaning/p>
     <pre class="prettyprint" data-lang="java">
 class Product { ... }
 class Product<b>Info</b> { ... }
 class Product<b>Data</b> { ... }
 </pre>
-<pre class="prettyprint" data-lang="java">
+    <pre class="prettyprint" data-lang="java">
 Product product;
 Product product<b>2</b>;
 Product <b>a</b>Product;
 Product <b>the</b>Product;
 Product <b>other</b>Product;
-
 
 Money money;
 Money moneyAmount;
@@ -329,8 +329,7 @@ class Customer {
     <article class="smaller">
       <p>longer names trump shorter names</p>
       <p>~ The length of a name should correspond to the size of its scope</p>
-      <p>and any searchable name trumps a constant in code</p>
-      <p> MAX_CLASSES_PER_STUDENT vs 7</p>
+      <p>any searchable name trumps a constant in code</p>
       <pre class="prettyprint" data-lang="java">
 int s;
 for (int j=0; j&lt;34; j++) { 
