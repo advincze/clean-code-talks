@@ -357,8 +357,37 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
     </hgroup>
     <article>
       <p>Hungarian Notation</p>
+      <pre class="prettyprint" data-lang="java">String stTelephoneNumber;
+Date dtBirthday;
+PhoneNumber phoneString; ...</pre>
+      
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Avoid encodings</h2>
+    </hgroup>
+    <article>
       <p>Member Prefixes</p>
+      <pre class="prettyprint" data-lang="java">public class Part {
+  private String m_dsc; // The textual description 
+  void setName(String name) {
+    m_dsc = name; 
+  }
+}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Avoid encodings</h2>
+    </hgroup>
+    <article>
       <p>Interfaces and Implementations</p>
+      <p>IShapeFactory or ShapeFactory</p>
+      <p>distraction at best and too much information at worst.</p>
+      <p>ShapeFactoryImp is preferable to encoding the interface.</p>
     </article>
   </slide>
 
@@ -369,9 +398,13 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
     <article>
       <p></p>
       <p>should have noun or noun phrase names:</p>
-      <p>Customer, WikiPage, Account, and AddressParser</p>
+      <pre class="prettyprint" data-lang="java">
+class Customer {...}
+class WikiPage {...}
+class Account {...}
+class AddressParser {...}</pre>
       <p>Noisewords:</p>      
-      <p>Manager, Processor, Data, or Info</p>
+      <p><span class="red">Manager</span>, <span class="red">Processor</span>, <span class="red">Data</span> or <span class="red">Info</span></p>
     </article>
   </slide>
 
@@ -379,13 +412,33 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
     <hgroup>
       <h2>Method Names</h2>
     </hgroup>
-    <article>
-      <p></p>
+    <article class="smaller">
       <p>should have verb or verb phrase names:</p>
-      <p>postPayment, deletePage, or save.</p>
-      <p>Noisewords:</p>      
-      <p>Customer, WikiPage, Account, and AddressParser</p>
-      <p>Method Names</p>
+      <pre class="prettyprint" data-lang="java">
+public void postPayment() { ... }
+public void deletePage() { ... }
+public void save() { ... }</pre>
+      <p>Accessors, mutators, and predicatesprefixed with <span class="green">get</span>, <span class="green">set</span>, and <span class="green">is</span></p>
+      <pre class="prettyprint" data-lang="java">
+string name = employee.getName();
+customer.setName("mike");
+if (paycheck.isPosted())...</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Method Names</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>When constructors are overloaded, </p>
+      <p>use static factory methods with names that describe the arguments:</p>
+      <pre class="prettyprint" data-lang="java">
+Complex fulcrumPoint = Complex.FromRealNumber(23.0);</pre>
+      <p>better than:</p>
+      <pre class="prettyprint" data-lang="java">
+Complex fulcrumPoint = new Complex(23.0);</pre>
+      <p>consider making the corresponding constructors private.</p>
     </article>
   </slide>
 
