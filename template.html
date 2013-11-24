@@ -327,6 +327,32 @@ class Customer {
 
   <slide>
     <hgroup>
+      <h2>Use Searchable Names</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>longer names trump shorter names</p>
+      <p>~ The length of a name should correspond to the size of its scope</p>
+      <p>and any searchable name trumps a constant in code</p>
+      <p> MAX_CLASSES_PER_STUDENT vs 7</p>
+      <pre class="prettyprint" data-lang="java">
+int s;
+for (int j=0; j&lt;34; j++) { 
+  s += (t[j]*4)/5;
+}</pre>
+      <pre class="prettyprint" data-lang="java">
+final int realDaysPerIdealDay = 4;
+final int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
+  int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+  int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
+  sum += realTaskWeeks;
+}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
       <h2></h2>
     </hgroup>
     <article>
