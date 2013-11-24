@@ -297,6 +297,42 @@ Product outgoingProduct;
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Use Pronounceable Names</h2>
+    </hgroup>
+    <article class="build smaller">
+      <p>Developers should discuss about code.</p>
+      <pre class="prettyprint" data-lang="java">
+class DtaRcrd102 {
+  private Date <b>genymdhms</b>;
+  private Date modymdhms;
+  private final String pszqint = "102"; 
+  /* ... */
+};
+</pre>
+      <p>generation date, year, month, day, hour, minute, and second</p>
+      <p>can be funny ;)</p>
+      <p>New developers had to have the variables explained </p>
+      <pre class="prettyprint" data-lang="java">
+class Customer {
+  private Date generationTimestamp; 
+  private Date modificationTimestamp; 
+  private final String recordId = "102"; 
+  /* ... */
+};
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
+    <article>
+    
+    </article>
+  </slide>
 
   <slide>
     <hgroup>
