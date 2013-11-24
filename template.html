@@ -202,40 +202,6 @@ Collection&lt;Account&gt; accounts;</pre>
 
   <slide>
     <hgroup>
-      <h2>Avoid Disinformation</h2>
-    </hgroup>
-    <article>
-      <p> names which vary in small ways.</p>
-      <pre class="prettyprint" data-lang="java">class XYZControllerForEfficientHandlingOfStrings{ ... }
- class XYZControllerForEfficientHandlingOfStrings{ ... }
-   class XYZControllerForStringStoringEfficiently{ ... }</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Avoid Disinformation</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Spelling is information</li>
-        <li>Inconsistent spellings is disinformation.</li>
-        <li>Be aware of automatic code completion</li>
-        <li>the developer is likely to pick an object by name without seeing your copious comments  or even the list of methods supplied by that class</li>
-        <li>names for very similar things sort together alphabetically</li>
-      </ul>
-      <pre class="prettyprint" data-lang="java">
-int a = l; 
-if ( O == l ){
-  a=O1;  
-} else {
-  l=01;  
-}</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
       <h2>Make Meaningful Distinctions</h2>
     </hgroup>
     <article class="smaller">
@@ -363,28 +329,32 @@ Date dtBirthday;</pre>
 
   <slide>
     <hgroup>
-      <h2>Avoid encodings</h2>
+      <h2>Avoid encodings - Member Prefixes</h2>
     </hgroup>
     <article>
-      <p>Member Prefixes</p>
+      <p>Don't use Member Prefixes</p>
       <pre class="prettyprint" data-lang="java">public class Part {
   private String m_dsc; // The textual description 
   void setName(String name) {
     m_dsc = name; 
   }
 }</pre>
+    <p>IDEs color the different scoped variables differently.</p>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Avoid encodings</h2>
+      <h2>Interfaces and Implementations</h2>
     </hgroup>
     <article>
-      <p>Interfaces and Implementations</p>
-      <p>IShapeFactory or ShapeFactory</p>
+      <p>IShapeFactory vs ShapeFactory</p>
       <p>distraction at best and too much information at worst.</p>
-      <p>ShapeFactoryImp is preferable to encoding the interface.</p>
+      <p>ShapeFactoryImpl is preferable to encoding the interface:</p>
+      <pre class="prettyprint" data-lang="java">
+interface ShapeFactory { ... }
+
+class ShapeFactoryImpl implements ShapeFactory { ... }</pre>
     </article>
   </slide>
 
