@@ -350,13 +350,21 @@ for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
       <h2>Avoid encodings - Hungarian Notation</h2>
     </hgroup>
     <article>
-      <pre class="prettyprint" data-lang="java">String stTelephoneNumber;
+      <ul class="build">
+        <li>
+          <pre class="prettyprint" data-lang="java">String stTelephoneNumber;
 Date dtBirthday;</pre>
-      <p>in 2013: rich type systems, compilers remember and enforce the types</p>
-      <p>smaller classes and shorter functions: <br/>=&gt; people can usually see the point of declaration
-      </p>
-      <p>Java programmers don’t need type encoding</p>
-      <pre class="prettyprint" data-lang="java">PhoneNumber phoneString; // this variable was declared a String first</pre>
+        </li>
+        <li>in 2013: rich type systems, compilers remember and enforce the types</li>
+        <li>smaller classes and shorter functions: 
+          <br/>=&gt; people can usually see the point of declaration
+        </li>
+        <li>Java programmers don’t need type encoding</li>
+        <li>What happens if the type is changed?</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">PhoneNumber phoneString; // this variable was declared a String first</pre>
+        </li>
+      </ul>
     </article>
   </slide>
 
@@ -365,14 +373,18 @@ Date dtBirthday;</pre>
       <h2>Avoid encodings - Member Prefixes</h2>
     </hgroup>
     <article>
-      <p>Don't use Member Prefixes</p>
-      <pre class="prettyprint" data-lang="java">public class Part {
+      <ul>
+        <li>Don't use Member Prefixes</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">public class Part {
   private String m_dsc; // The textual description 
   void setName(String name) {
     m_dsc = name; 
   }
 }</pre>
-    <p>IDEs color the different scoped variables differently.</p>
+        </li>
+        <li>IDEs color the different scoped variables differently.</li>
+      </ul>
     </article>
   </slide>
 
