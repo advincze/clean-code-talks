@@ -195,17 +195,21 @@ int hp; // hypotenuse</pre>
     <hgroup>
       <h2>Avoid Disinformation</h2>
     </hgroup>
-    <article class="build">
-
-      <p>Types should not be coded into the name (s. Hungarian notation later)</p>
-
-      <pre class="prettyprint" data-lang="java">
+    <article>
+      <ul class="build">
+        <li>Types should not be coded into the name (s. Hungarian notation later)</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountList;</pre>
-      <p>better:</p>
-      <pre class="prettyprint" data-lang="java">
+        </li>
+        <li>better:</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 Collection&lt;Account&gt; accountGroup;
 Collection&lt;Account&gt; bunchOfAccounts;
 Collection&lt;Account&gt; accounts;</pre>
+        </li>
+      </ul>
     </article>
   </slide>
 
@@ -216,7 +220,7 @@ Collection&lt;Account&gt; accounts;</pre>
     <article class="smaller">
     <div class="build">
       <p>Don't write code solely to satisfy a compiler or interpreter.</p>
-      <p>... by misspelling:</p>
+      <p>e.g. by misspelling:</p>
       <pre class="prettyprint" data-lang="java">
 Class klass;
 Class clazz;</pre>
@@ -244,13 +248,16 @@ public static void copyChars(char[] source, char[] destination) {
       <h2>Avoid Noise Words</h2>
     </hgroup>
     <article class="smaller">
-    <p>There is no difference in meaning/p>
-    <pre class="prettyprint" data-lang="java">
+      <ul class="build">
+        <li>There is no difference in meaning</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 class Product { ... }
 class Product<b>Info</b> { ... }
-class Product<b>Data</b> { ... }
-</pre>
-    <pre class="prettyprint" data-lang="java">
+class Product<b>Data</b> { ... }</pre>
+        </li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 Product product;
 Product product<b>2</b>;
 Product <b>a</b>Product;
@@ -260,11 +267,15 @@ Product <b>other</b>Product;
 Money money;
 Money moneyAmount;
 </pre>
-    <p>Better:</p>
-    <pre class="prettyprint" data-lang="java">
+        </li>
+        <li>better:</li>
+        <li>
+          <pre class="prettyprint" data-lang="java">
 Product incomingProduct;
 Product outgoingProduct;
 </pre>
+        </li>
+      </ul>
     </article>
   </slide>
 
@@ -284,7 +295,7 @@ class DtaRcrd102 {
 </pre>
       <p>generation date, year, month, day, hour, minute, and second</p>
       <p>can be funny ;)</p>
-      <p>New developers had to have the variables explained </p>
+      <p>New developers have to have the variables explained </p>
       <pre class="prettyprint" data-lang="java">
 class Customer {
   private Date generationTimestamp; 
