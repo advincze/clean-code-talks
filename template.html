@@ -44,6 +44,9 @@ URL: https://code.google.com/p/io-2012-slides
       <section>
         <ul>
           <li>talk is about: code quality</li>
+          <li>why is code quality important?</li>
+          <li>testing: doing the right thing</li>
+          <li>doesn't say anything about maintainability or extendability</li>
           <li>we read much more code than we write 10:1</li>
           <li>we need a common understanding what good code is</li>
         </ul>
@@ -87,7 +90,7 @@ URL: https://code.google.com/p/io-2012-slides
           <li>nobody is ever goint go pay you for good quality</li>
           <li>it is expected</li>
           <li>customer only thinks about quality, if its really BAD</li>
-          <li>your only ossibility is incremental small steps</li>
+          <li>your only possibility is incremental small steps</li>
         </ul>
       </section>
     </aside>
@@ -526,7 +529,8 @@ public Foo retrieve() { //...}
 public Foo get() { //...}
 </pre>
         </li>
-        <li>Function names have to be consistent without any additional exploration - developers likely pick an object by name without seeing your copious comments</li>
+        <li>consistent naming can be understood easier</li>
+        <li>developers likely pick a method without seeing your copious comments</li>
       </ul>
       <ul class="build">
         <li>Don't mix words like <b>controllers</b>, <b>managers</b> or 
@@ -552,7 +556,7 @@ public class ProtocolController() { //...}
       <ul class="build">
         <li>Don't blindly follow the "one word per concept" rule</li>
         <li>Avoid using the same word for two purposes</li>
-        <li>e.g. adding elements to other objects</li>
+        <li>e.g. adding elements to other objects VS appending Strings</li>
         <li>
           <pre class="prettyprint" data-lang="java">
 // adding elements to an existing collection            
